@@ -7,6 +7,7 @@ boy = load_image('animation_sheet.png')
 
 def handle_events():
     global running
+    global dir
     events = get_events()
     for event in events:
         if event.type == SDL_QUIT:
@@ -14,12 +15,20 @@ def handle_events():
         elif event.type == SDL_KEYDOWN:
             if event.key == SDLK_ESCAPE:
                 running = False
-    pass
+            elif event.key == SDLK_RIGHT:
+                dir = 1
+
 
 running = True
 frame = 0
 x = 400
 y = 90
+dir = 0 # 1:right, 2:left, 3:up, 4:down
+
+
+def boy_move():
+    pass
+
 
 while running:
     clear_canvas()
@@ -27,9 +36,8 @@ while running:
     boy.clip_draw(frame*100, 300, 100, 100, x, y)
     update_canvas()
     handle_events()
+    boy_move()
     frame = (frame + 1) % 8
-    x+=5
-    y+=5
-    delay(0.5)
+    delay(0.05)
 
 close_canvas()
