@@ -58,9 +58,6 @@ y = 90
 dir = 0 # 1:right, 2:left, 3:up, 4:down
 action = 3 # 0 : left run, 1 : right run, 2 : left idle, 3 : right idle
 
-
-
-
 while running:
     clear_canvas()
     background.draw(400, 300)
