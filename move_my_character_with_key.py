@@ -36,7 +36,8 @@ def boy_move():
         if(x >50):
             x -= 5
     elif dir == 3:
-        y += 5
+        if(y <550):
+            y += 5
     elif dir == 4:
         y -= 5
 
