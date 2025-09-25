@@ -24,13 +24,16 @@ def handle_events():
             elif event.key == SDLK_DOWN:
                 dir = 4
         elif event.type == SDL_KEYUP:
+            action = 1
             dir = 0
 
 def boy_move():
     global x, y
     global dir
+    global action
     if dir == 1:
         if(x <750):
+            action = 1
             x += 5
     elif dir == 2:
         if(x >50):
@@ -47,7 +50,7 @@ frame = 0
 x = 400
 y = 90
 dir = 0 # 1:right, 2:left, 3:up, 4:down
-
+action = 3 # 0 : left run, 1 : right run, 2 : left idle, 3 : right idle
 
 
 
@@ -55,7 +58,7 @@ dir = 0 # 1:right, 2:left, 3:up, 4:down
 while running:
     clear_canvas()
     background.draw(400, 300)
-    boy.clip_draw(frame*100, 300, 100, 100, x, y)
+    boy.clip_draw(frame*100, action*100, 100, 100, x, y)
     update_canvas()
     handle_events()
     boy_move()
