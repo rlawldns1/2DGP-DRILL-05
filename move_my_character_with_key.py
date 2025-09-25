@@ -39,7 +39,8 @@ def boy_move():
         if(y <550):
             y += 5
     elif dir == 4:
-        y -= 5
+        if(y >50):
+            y -= 5
 
 running = True
 frame = 0
