@@ -8,6 +8,7 @@ boy = load_image('animation_sheet.png')
 def handle_events():
     global running
     global dir
+    global action
     events = get_events()
     for event in events:
         if event.type == SDL_QUIT:
@@ -24,8 +25,10 @@ def handle_events():
             elif event.key == SDLK_DOWN:
                 dir = 4
         elif event.type == SDL_KEYUP:
-            action = 1
             dir = 0
+            action = 3
+            if event.key == SDLK_LEFT:
+                action = 2
 
 def boy_move():
     global x, y
@@ -37,12 +40,15 @@ def boy_move():
             x += 5
     elif dir == 2:
         if(x >50):
+            action = 0
             x -= 5
     elif dir == 3:
         if(y <550):
+            action = 1
             y += 5
     elif dir == 4:
         if(y >50):
+            action = 1
             y -= 5
 
 running = True
