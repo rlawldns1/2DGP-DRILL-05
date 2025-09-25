@@ -21,6 +21,8 @@ def handle_events():
                 dir = 2
             elif event.key == SDLK_UP:
                 dir = 3
+            elif event.key == SDLK_DOWN:
+                dir = 4
         elif event.type == SDL_KEYUP:
             dir = 0
 
@@ -28,11 +30,14 @@ def boy_move():
     global x, y
     global dir
     if dir == 1:
-        x += 5
+        if(x <750):
+            x += 5
     elif dir == 2:
         x -= 5
     elif dir == 3:
         y += 5
+    elif dir == 4:
+        y -= 5
 
 running = True
 frame = 0
