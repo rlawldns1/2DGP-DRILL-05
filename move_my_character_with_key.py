@@ -17,6 +17,8 @@ def handle_events():
                 running = False
             elif event.key == SDLK_RIGHT:
                 dir = 1
+        elif event.type == SDL_KEYUP:
+            dir = 0
 
 def boy_move():
     global x
