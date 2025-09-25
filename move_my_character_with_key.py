@@ -18,6 +18,11 @@ def handle_events():
             elif event.key == SDLK_RIGHT:
                 dir = 1
 
+def boy_move():
+    global x
+    global dir
+    if dir == 1:
+        x += 5
 
 running = True
 frame = 0
@@ -26,8 +31,7 @@ y = 90
 dir = 0 # 1:right, 2:left, 3:up, 4:down
 
 
-def boy_move():
-    pass
+
 
 
 while running:
