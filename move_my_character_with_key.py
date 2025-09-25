@@ -8,6 +8,9 @@ boy = load_image('animation_sheet.png')
 running = True
 
 while running:
-    pass
+    clear_canvas()
+    background.draw(400, 300)
+    update_canvas()
+    delay(0.5)
 
 close_canvas()
