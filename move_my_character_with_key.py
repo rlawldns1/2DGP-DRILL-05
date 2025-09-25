@@ -1,11 +1,9 @@
 from pico2d import *
 
-background = load_image('TUK_GROUND.png')
-boy = load_image('animation_sheet.png')
-
 open_canvas()
 
-
+background = load_image('TUK_GROUND.png')
+boy = load_image('animation_sheet.png')
 
 
 close_canvas()
